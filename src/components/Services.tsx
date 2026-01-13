@@ -1,5 +1,6 @@
 import { Wallet, Camera, CreditCard, ShoppingCart, GraduationCap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -10,6 +11,7 @@ const Services = () => {
       description: "Coaching en gestion financière personnelle et d'entreprise, éducation financière, planification budgétaire et stratégies de croissance.",
       features: ["Coaching financier", "Conseils d'entreprise", "Planification budgétaire", "Éducation financière"],
       color: "from-emerald-500 to-emerald-600",
+      link: "/axis-finance",
     },
     {
       icon: Camera,
@@ -18,6 +20,7 @@ const Services = () => {
       description: "Photographie professionnelle, vidéo & caméra, reportages événementiels et création de contenus visuels pour entreprises et marques.",
       features: ["Photographie pro", "Vidéo & caméra", "Reportages", "Contenus visuels"],
       color: "from-blue-500 to-blue-600",
+      link: "/axis-media",
     },
     {
       icon: CreditCard,
@@ -26,6 +29,7 @@ const Services = () => {
       description: "Transactions Mobile Money, wallets électroniques, cartes Visa et solutions de paiement digitales pour simplifier vos opérations.",
       features: ["Mobile Money", "Wallets électroniques", "Cartes Visa", "Paiements digitaux"],
       color: "from-violet-500 to-violet-600",
+      link: "/axis-pay",
     },
     {
       icon: ShoppingCart,
@@ -34,6 +38,7 @@ const Services = () => {
       description: "E-commerce, vente de produits et services, plateforme marchande physique et digitale pour étendre votre marché.",
       features: ["E-commerce", "Vente en ligne", "Plateforme digitale", "Marché physique"],
       color: "from-orange-500 to-orange-600",
+      link: "/axis-market",
     },
     {
       icon: GraduationCap,
@@ -42,6 +47,7 @@ const Services = () => {
       description: "Formation en développement personnel, leadership, mentalité entrepreneuriale, productivité et discipline personnelle.",
       features: ["Développement personnel", "Leadership", "Mentalité entrepreneur", "Productivité"],
       color: "from-rose-500 to-rose-600",
+      link: "/axis-academy",
     },
   ];
 
@@ -103,9 +109,11 @@ const Services = () => {
                 </ul>
 
                 {/* CTA */}
-                <Button variant="ghost" className="group/btn p-0 h-auto text-accent hover:text-accent-foreground hover:bg-transparent">
-                  En savoir plus
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <Button variant="ghost" className="group/btn p-0 h-auto text-accent hover:text-accent-foreground hover:bg-transparent" asChild>
+                  <Link to={service.link}>
+                    En savoir plus
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
               </div>
             </div>
